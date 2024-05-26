@@ -19,9 +19,9 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - .:/sample_app
+      - .:/study_ruby
       - bundle_data:/usr/local/bundle:cached
-      - node_modules:/sample_app/node_modules
+      - node_modules:/study_ruby/node_modules
     environment:
       TZ: Asia/Tokyo
     ports:

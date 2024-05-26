@@ -18,16 +18,16 @@ RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
 # -----
 
 #作成予定のアプリケーション名を使用する
-RUN mkdir /sample_app
-WORKDIR /sample_app 
+RUN mkdir /study_ruby
+WORKDIR /study_ruby 
 
 # RubyGemsのバージョンがRuby 3.1.4に対応するように「system 3.3.3」を指定している。
 RUN gem update --system 3.3.3
 
 RUN gem install bundler
-COPY Gemfile /sample_app/Gemfile
-COPY Gemfile.lock /sample_app/Gemfile.lock
-COPY yarn.lock /sample_app/yarn.lock
+COPY Gemfile /study_ruby/Gemfile
+COPY Gemfile.lock /study_ruby/Gemfile.lock
+COPY yarn.lock /study_ruby/yarn.lock
 RUN bundle install
 RUN yarn install
-COPY . /sample_app
+COPY . /study_ruby
